@@ -4,46 +4,56 @@
     <title>Cat Clicker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-    <!-- jQuery
-    --------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <br>
     <div class="container">
-        <div class="row justify-content-center d-flex">
-            <div class="col-md-12" style="align-content: center; justify-content: center; display: flex;">
-                <img src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" class="cat-pic">
+        <div class="row" style="text-align: center;">
+            <div class="col-md-6">
+                <h1 id="cat-1-name"></h1>
+                <img src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" class="cat-pic-1">
+                <h1 id="count-1"></h1>
+            </div>
+            <div class="col-md-6">
+                <h1 id="cat-2-name"></h1>
+                <img src="https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496" class="cat-pic-2">
+                <h1 id="count-2"></h1>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="count"></h1>
-            </div>
-        </div>
-        
         <script>
-            var count = 0;
+            var count1 = 0;
+            var count2 = 0;
+            var cat1Name = "Bob";
+            var cat2Name = "Rob";
 
             $(document).ready(function() {
-                $(".cat-pic").click(function() {
-                    count++;
-                    $("#count").html(count);
+                $("#cat-1-name").append(cat1Name);
+                $("#cat-2-name").append(cat2Name);
+                
+                $(".cat-pic-1").click(function() {
+                    $("#count-1").html(++count1);
+                });
+                
+                $(".cat-pic-2").click(function() {
+                    $("#count-2").html(++count2);
                 });
             });
         </script>
 
         <style>
-            .cat-pic {
-                width: 50%;
+            body {
+                background-color: #0a0a0a;
+                color: white;
             }
-            
+            .cat-pic-1,
+            .cat-pic-2 {
+                width: 30vw;
+                cursor: pointer;
+            }
+
             #count {
                 text-align: center;
                 padding-top: 1em;
